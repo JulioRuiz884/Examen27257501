@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Coling.Shared;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+
+namespace Coling.API.Afiliados
+{
+    public class Contexto : DbContext
+    {
+        public Contexto(DbContextOptions<Contexto> options) : base(options)
+        {
+
+        }
+        public virtual DbSet<Persona> Personas { get; set; }
+        public virtual DbSet<Telefono> Telefono { get; set; }
+        public virtual DbSet<Direccion> Direccion { get; set; }
+        public virtual DbSet<PersonaTipoSocial> PersonaTipoSocial { get; set; }
+        public virtual DbSet<ProfesionAfiliado> ProfesionAfiliado { get; set; }
+        public virtual DbSet<AfiliadoIdioma> AfiliadoIdioma { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Pedidos> Pedidos { get; set; }
+        public virtual DbSet<Detalle> Detalles { get; set; }
+
+    }
+}
